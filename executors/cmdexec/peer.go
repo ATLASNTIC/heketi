@@ -71,7 +71,7 @@ func (s *CmdExecutor) GlusterdCheck(host string) error {
 
 	logger.Info("Check Glusterd service status in node %v", host)
 	commands := []string{
-		fmt.Sprintf("systemctl status glusterd"),
+		fmt.Sprintf("systemctl status glusterfs-server"),
 	}
 	err := rex.AnyError(s.RemoteExecutor.ExecCommands(host, commands, 10))
 	if err != nil {
